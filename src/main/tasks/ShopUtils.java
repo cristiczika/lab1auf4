@@ -29,4 +29,14 @@ public class ShopUtils {
         return max1 > max2 ? max1 : max2;
     }
 
+    public static int getMostExpensiveUsbWithinBudget(int[] usbs, int budget) {
+        int best = -1;
+        for (int i = 0; i < usbs.length; i++) {
+            if (usbs[i] > best && usbs[i] <= budget) {
+                best = usbs[i];
+            }
+        }
+        return best;
+    }
+
 }
