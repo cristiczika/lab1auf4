@@ -39,4 +39,17 @@ public class ShopUtils {
         return best;
     }
 
+    public static int getMaxSpend(int[] keyboards, int[] usbs, int budget) {
+        int best = -1;
+        for (int i = 0; i < keyboards.length; i++) {
+            for (int j = 0; j < usbs.length; j++) {
+                int total = keyboards[i] + usbs[j];
+                if (total <= budget && total > best) {
+                    best = total;
+                }
+            }
+        }
+        return best;
+    }
+
 }
